@@ -1,0 +1,16 @@
+<header class="header">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="<%- url_for() %>"><%= config.title %></a>
+        </div>
+        <nav class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <% for(var name in theme.menu) { %>
+                <li >
+                    <a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
+                </li>
+                <% } %>
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta context="text/html; charset=utf-8" />
+        <title>Home</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Hello World</h1>
+            <section class="container">
+                <% page.posts.each(function (post) { %>
+                    <article>
+                        <div>
+                            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                        </div>
+                        <div>
+                            <%- post.excerpt %>
+                        </div>
+                        <div>
+                            <span><%- date(post.date,"YYYY-MM-DD") %></span>
+                        </div>
+                    </article>
+                <% }) %>
+            </section>
+        </div>
+        
+    </body>
+</html>
